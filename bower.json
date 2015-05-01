@@ -1,0 +1,21 @@
+{
+  "name": "typechime",
+  "version": "0.0.0",
+  "authors": [
+    "Jonathan Ostrander <jonathanost@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/public/lib",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "teoria": "git://github.com/OstrichProjects/teoria.git#~1.6.1",
+    "midi": "*",
+    "midi-soundfonts-partial": "*"
+  }
+}

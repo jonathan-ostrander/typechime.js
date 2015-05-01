@@ -1,0 +1,23 @@
+extends ../layout
+
+block content
+  a(href="https://github.com/OstrichProjects/typechime" target="_blank")
+    img(style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png")
+  .header
+    .header-container
+      h1 About typechime
+      a(href="/")
+        h2 back to typechi.me
+
+  .desc
+    :markdown
+      ### TypeChime's code uses algorithms to generate background music as you type into a textbox.
+
+      * Generating notes: TypeChi.me reads in each word and breaks it down into its phonetic parts. Vowel phonetics is recorded and each assigned a number from 0 to 14 according to the vowel's pitch when it is spoken<sup>[1]</sup>. This corresponds to the nth note in whatever scale is being used.
+      * Tempo: Each note is put onto the note queue that plays a quarter note when a note is taken off the queue. Spaces are added once a new word is started to break up the stream of notes. The beats per minute of the music is dynamically based on how fast you type so that the music keeps up with what you are typing.
+      * Key: A major or minor key is assigned to the music based on the semantics of the words currently being used. Each adjective, noun, verb, and adverb is filtered through thousands of movie reviews where it is assigned values for positive and negative connotation and the word's objectiveness<sup>[2]</sup>. These values come from teaching the algorithm with the rating of the reviews the word appears in. Different rages of positive, negative, and objective values correspond to different musical keys.
+      * Cords: Background chords are generated on top of the main melody to add depth. A canon cord progression of 8 cords is continually repeated. When the user finishes a word, the program uses a Euclidean Rhythm algorithm to determine if it should switch to the next cord<sup>[3]</sup>.
+
+      [1]: http://thelisteningmachine.org/about "The Listening Machine"
+      [2]: http://streamhacker.com/2010/05/10/text-classification-sentiment-analysis-naive-bayes-classifier/ "Text Classification with nltk"
+      [3]: http://blog.fader.co.uk/post/11519018856/bjorklund-algorithm-and-euclidean-rhythms "Generating Rhythms with Euclids GCD Algorithm"
