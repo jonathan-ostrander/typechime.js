@@ -1,7 +1,6 @@
 /*jslint node: true*/
 "use strict";
 
-// expose the routes to our app with module.exports
 module.exports = function(app) {
 
   app.get('/', function(req, res) {
@@ -10,6 +9,10 @@ module.exports = function(app) {
 
   app.get('/about', function(req, res) {
     res.render('about', { title: 'typechime: about' });
+  });
+
+  app.get('/notes', function(req, res) {
+
   });
 
 };

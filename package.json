@@ -7,13 +7,15 @@
     "express": "^4.12.3",
     "jade": "^1.9.2",
     "marked": "^0.3.3",
-    "speakeasy-nlp": "^0.2.2"
+    "phoneme": "0.0.1",
+    "rhyme": "0.0.3"
   },
   "devDependencies": {
-    "gulp": "^3.8.11"
+    "gulp": "^3.8.11",
+    "mocha": "^2.2.4"
   },
   "scripts": {
-    "test": "test"
+    "test": "mocha test/"
   },
   "author": "",
   "license": "MIT"
