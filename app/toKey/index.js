@@ -1,6 +1,6 @@
 module.exports = function(scores) {
-  var pos = scores.positive,
-      neg = scores.negative;
+  var pos = scores.pos,
+      neg = scores.neg;
 
   if ((typeof pos === 'undefined') || (typeof neg === 'undefined')) {
     throw Error('Postive and Negative must be specified.');
