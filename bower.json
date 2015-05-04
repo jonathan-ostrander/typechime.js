@@ -16,6 +16,7 @@
   "dependencies": {
     "teoria": "git://github.com/OstrichProjects/teoria.git#~1.6.1",
     "midi": "*",
-    "midi-soundfonts-partial": "*"
+    "midi-soundfonts-partial": "*",
+    "blog-examples": "https://github.com/danguer/blog-examples.git"
   }
 }
