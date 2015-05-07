@@ -18,6 +18,12 @@ module.exports = function(app) {
   // API route that returns the notes for the given words, updated sentiment values, and the music key
   app.get('/words', function(req, res) {
     var _average = function(sentiments) {
+      if (sentiments.length === 0) {
+        return {
+          pos: 0,
+          neg: 0
+        };
+      }
       return sentiments.reduce(function (prev, cur, i) {
         return {
           pos: ( prev.pos * i + cur.pos ) / ( i + 1 ),

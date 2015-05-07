@@ -1,5 +1,5 @@
 var fs = require('fs');
-var sentimentJson = __dirname + '/sentiment.json'
+var sentimentJson = __dirname + '/sentiment.json';
 var sentimentObj = JSON.parse(fs.readFileSync(sentimentJson, 'utf8'));
 
 module.exports = function(words) {
@@ -8,4 +8,4 @@ module.exports = function(words) {
   }).filter(function(d) {
     return d;
   });
-}
+};

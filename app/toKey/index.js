@@ -19,4 +19,4 @@ module.exports = function(scores) {
   } else {
     return ['B4', 'minor'];
   }
-}
+};

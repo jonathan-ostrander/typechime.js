@@ -23,24 +23,25 @@ gulp.task('js', function() {
     .pipe(concat('app.js'))
     // .pipe(uglify())
     .pipe(gulp.dest('build/js'));
+
+  console.log('JS built!')
 });
 
 gulp.task('test', function() {
   gulp.src('./test/*.js')
     .pipe(mocha())
     .once('end', function() {
+      console.log('Tests complete!')
       process.exit();
     });
 });
 
 gulp.task('server', function() {
   server.run();
+
+  gulp.watch(['./public/js/app.js'], ['js', server.notify]);
+
+  gulp.watch(['./app/**/*.js'], ['test', server.run]);
 });
 
-gulp.task('watch', function() {
-  gulp.watch(['./public/js/app.js'], ['js']);
-
-  gulp.watch(['./app/**/*.js'], ['test', 'server']);
-});
-
-gulp.task('default', ['js', 'server', 'watch']);
+gulp.task('default', ['js', 'server']);

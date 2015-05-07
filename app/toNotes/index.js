@@ -12,4 +12,4 @@ module.exports = function (word) {
   var vowels = phoneme.vowels(word);
   return vowels ? vowels.map(function(vowel) { return notes[vowel.slice(0, -1)]; }) : [];
 
-}
+};
