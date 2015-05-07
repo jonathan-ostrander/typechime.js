@@ -6,6 +6,7 @@ var mocha = require('gulp-mocha');
 
 gulp.task('js', function() {
   gulp.src([
+    './public/lib/jquery/dist/jquery.js',
     './public/lib/blog-examples/js/base64-binary.js',
     './public/lib/midi/build/MIDI.js',
     './public/lib/teoria/dist/teoria.js'
@@ -13,13 +14,14 @@ gulp.task('js', function() {
     .pipe(uglify())
     .pipe(gulp.dest('build/js'));
 
-  gulp.src(['./public/lib/midi-soundfonts-partial/FluidR3_GM/*-ogg.js'])
+  gulp.src(['./public/lib/midi-soundfonts-partial/FluidR3_GM/*-ogg.js',
+            './public/lib/midi-soundfonts-partial/FluidR3_GM/*-mp3.js'])
     .pipe(uglify())
     .pipe(gulp.dest('build/soundfont'));
 
   gulp.src(['./public/js/**/*.js'])
     .pipe(concat('app.js'))
-    .pipe(uglify())
+    // .pipe(uglify())
     .pipe(gulp.dest('build/js'));
 });
 

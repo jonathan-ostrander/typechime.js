@@ -19,7 +19,7 @@ describe('#words', function () {
     request({
         url: 'http://localhost:3333/words?words%5B%5D=fawn&words%5B%5D=unattackable&words%5B%5D=to&words%5B%5D=the',
       }, function (error, res, body) {
-        assert.equal(JSON.parse(body).key, 'Cmaj');
+        assert.deepEqual(JSON.parse(body).key, ['C4', 'major']);
         done();
     });
   });

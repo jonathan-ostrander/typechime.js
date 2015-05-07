@@ -7,16 +7,16 @@ module.exports = function(scores) {
   }
 
   if ( pos >= 2/3 ) {
-    return 'Dmaj';
+    return ['D4', 'major'];
   } else if ( neg >= 2/3 ) {
-    return 'Fmin';
+    return ['F4', 'minor'];
   } else if ( pos + neg <= 1/3 ) {
-    return 'Cmaj';
+    return ['C4', 'major'];
   } else if ( pos >= 1/3 && neg >= 1/3 ) {
-    return 'F#maj';
+    return ['F#4', 'major'];
   } else if ( neg < 1/3 ) {
-    return 'Fmaj';
+    return ['F4', 'major'];
   } else {
-    return 'Bmin';
+    return ['B4', 'minor'];
   }
 }

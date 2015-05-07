@@ -25,11 +25,12 @@ module.exports = function(app) {
         };
       });
     };
+
     var movingAverage = req.query.average ? req.query.average : 5;
 
     var data = {
       notes: req.query.words.map(toNotes)
-    }
+    };
 
     data.sentiment = req.query.sentiment ?
                       req.query.sentiment.concat(sentiment(req.query.words)).slice(-1 * movingAverage) :
